@@ -77,18 +77,18 @@ class DropdownWidgetState<T> extends State<DropdownWidget<T>> {
   }
 
   void _setSelectedItem(int index) {
-    setState(() {
-      for (var i = 0; i < widget.dropdownList.length; i++) {
-        if (index == i) {
-          widget.dropdownList[i] =
-              widget.dropdownList[i].copyWith(isSelected: true);
-          widget.getSelectedItem(i);
-        } else {
-          widget.dropdownList[i] =
-              widget.dropdownList[i].copyWith(isSelected: false);
-        }
-      }
-    });
+    // setState(() {
+    //   for (var i = 0; i < widget.dropdownList.length; i++) {
+    //     if (index == i) {
+    //       widget.dropdownList[i] =
+    //           widget.dropdownList[i].copyWith(isSelected: true);
+    //       widget.getSelectedItem(i);
+    //     } else {
+    //       widget.dropdownList[i] =
+    //           widget.dropdownList[i].copyWith(isSelected: false);
+    //     }
+    //   }
+    // });
   }
 
   Widget _buildAnimation({required Widget child}) {
