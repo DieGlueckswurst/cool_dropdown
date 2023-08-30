@@ -110,6 +110,12 @@ class _ResultWidgetState<T> extends State<ResultWidget<T>> {
   }
 
   List<Widget> _buildResultItem() => [
+        /// if you want to show label in result widget
+        if (widget.resultOptions.render == ResultRender.all ||
+            widget.resultOptions.render == ResultRender.icon ||
+            widget.resultOptions.render == ResultRender.reverse)
+          selectedItem?.icon ?? const SizedBox(),
+
         /// if you want to show icon in result widget
         if (widget.resultOptions.render == ResultRender.all ||
             widget.resultOptions.render == ResultRender.label ||
@@ -125,12 +131,6 @@ class _ResultWidgetState<T> extends State<ResultWidget<T>> {
               ),
             ),
           ),
-
-        /// if you want to show label in result widget
-        if (widget.resultOptions.render == ResultRender.all ||
-            widget.resultOptions.render == ResultRender.icon ||
-            widget.resultOptions.render == ResultRender.reverse)
-          selectedItem?.icon ?? const SizedBox(),
 
         /// if you want to show icon + label in result widget
       ].isReverse(
