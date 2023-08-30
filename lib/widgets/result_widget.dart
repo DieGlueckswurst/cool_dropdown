@@ -110,20 +110,20 @@ class _ResultWidgetState<T> extends State<ResultWidget<T>> {
   }
 
   List<Widget> _buildResultItem() => [
-        /// if you want to show label in result widget
+        /// if you want to show icon in result widget
         if (widget.resultOptions.render == ResultRender.all ||
             widget.resultOptions.render == ResultRender.icon ||
             widget.resultOptions.render == ResultRender.reverse)
           selectedItem?.icon ?? const SizedBox(),
 
-        /// if you want to show icon in result widget
+        /// if you want to show label in result widget
         if (widget.resultOptions.render == ResultRender.all ||
             widget.resultOptions.render == ResultRender.label ||
             widget.resultOptions.render == ResultRender.reverse)
           Flexible(
             child: _buildMarquee(
               Text(
-                selectedItem?.label ?? widget.resultOptions.placeholder ?? '',
+                'it is working',
                 overflow: widget.resultOptions.textOverflow,
                 style: selectedItem != null
                     ? widget.resultOptions.textStyle
