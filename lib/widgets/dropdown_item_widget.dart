@@ -61,6 +61,12 @@ class _DropdownItemWidgetState extends State<DropdownItemWidget>
     return [
       /// if you want to show icon in result widget
       if (widget.dropdownItemOptions.render == DropdownItemRender.all ||
+          widget.dropdownItemOptions.render == DropdownItemRender.icon ||
+          widget.dropdownItemOptions.render == DropdownItemRender.reverse)
+        _buildIcon(),
+
+      /// if you want to show icon in result widget
+      if (widget.dropdownItemOptions.render == DropdownItemRender.all ||
           widget.dropdownItemOptions.render == DropdownItemRender.label ||
           widget.dropdownItemOptions.render == DropdownItemRender.reverse)
         Flexible(
@@ -72,12 +78,6 @@ class _DropdownItemWidgetState extends State<DropdownItemWidget>
             ),
           ),
         ),
-
-      /// if you want to show icon in result widget
-      if (widget.dropdownItemOptions.render == DropdownItemRender.all ||
-          widget.dropdownItemOptions.render == DropdownItemRender.icon ||
-          widget.dropdownItemOptions.render == DropdownItemRender.reverse)
-        _buildIcon(),
     ].isReverse(
         widget.dropdownItemOptions.render == DropdownItemRender.reverse);
   }

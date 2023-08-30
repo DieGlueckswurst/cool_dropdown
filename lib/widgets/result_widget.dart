@@ -123,7 +123,7 @@ class _ResultWidgetState<T> extends State<ResultWidget<T>> {
           Flexible(
             child: _buildMarquee(
               Text(
-                'it is working',
+                selectedItem?.label ?? widget.resultOptions.placeholder ?? '',
                 overflow: widget.resultOptions.textOverflow,
                 style: selectedItem != null
                     ? widget.resultOptions.textStyle
